@@ -1,4 +1,4 @@
-FROM maven:latest as build
+FROM maven:latest 
 
 WORKDIR /workspace/suresh-job
 
@@ -14,7 +14,7 @@ FROM openjdk:11-jdk
 
 VOLUME /tmp
 
-COPY --from=build /workspace/suresh-job/target/user-0.0.1-SNAPSHOT.jar /app.jar
+COPY ./target/user-0.0.1-SNAPSHOT.jar /app.jar
 
 RUN apt update && \
 
